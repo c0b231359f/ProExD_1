@@ -15,14 +15,20 @@ def main():
 
     #画像の読み込み
     bg_img = pg.image.load("fig/pg_bg.jpg")
+
     bard_img = pg.image.load("fig/3.png") #変更_問２
+    bard_img = pg.transform.flip(bard_img, True, False)
     tmr = 0
+    x = 0
 
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
-
-        screen.blit(bard_img, [0, 0]) #背景の貼り付け
+        x -= 100
+        if x <= -800:
+            x = 0
+        screen.blit(bg_img, [x, 0]) #背景の貼り付け
+        screen.blit(bard_img, [300, 200])
         pg.display.update()
         tmr += 1        
         clock.tick(10)
