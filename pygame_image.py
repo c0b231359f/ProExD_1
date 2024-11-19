@@ -21,7 +21,7 @@ def main():
     bard_img = pg.transform.flip(bard_img, True, False)
 
     tmr = 0
-    dis = 1 #移動距離
+    dis = 3 #移動距離
 
     bard_rect = bard_img.get_rect()
     bard_rect.center = 300, 200
@@ -31,7 +31,7 @@ def main():
             if event.type == pg.QUIT: return
         
         #背景画像のループ
-        tmr -= 10
+        tmr -= dis
         x = 0
         y = 0
         if tmr <= -3200:
@@ -44,18 +44,22 @@ def main():
         key_lst = pg.key.get_pressed()
         if key_lst[pg.K_UP]:
             y = -dis
+            bard_rect.move_ip((x-dis, y))
         if key_lst[pg.K_DOWN]:
             y = dis
+            bard_rect.move_ip((x-dis, y))
         if key_lst[pg.K_RIGHT]:
-            x = dis
+            x = dis*1.5
+            bard_rect.move_ip((x-dis, y))
         if key_lst[pg.K_LEFT]:
             x = -dis
-        bard_rect.move_ip((x, y))
+            bard_rect.move_ip((x-dis, y))
+        # bard_rect.move_ip((x-dis, y))
         screen.blit(bard_img, bard_rect)
 
         # screen.blit(bard_img, [300, 200])
         pg.display.update()
-        tmr += 1        
+        # tmr += 1        
         clock.tick(200)
 
 
