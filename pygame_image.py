@@ -11,7 +11,7 @@ def main():
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
     bg_img = pg.image.load("fig/pg_bg.jpg")
-    # c_img = pg.image.load("apple.jpg") #変更_問２
+    c_img = pg.image.load("apple.jpg") #変更_問２
     tmr = 0
     while True:
         for event in pg.event.get():
