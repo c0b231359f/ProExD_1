@@ -44,17 +44,17 @@ def main():
         key_lst = pg.key.get_pressed()
         if key_lst[pg.K_UP]:
             y = -dis
-            bard_rect.move_ip((x-dis, y))
+            # bard_rect.move_ip((x-dis, y))
         if key_lst[pg.K_DOWN]:
             y = dis
-            bard_rect.move_ip((x-dis, y))
+            # bard_rect.move_ip((x-dis, y))
         if key_lst[pg.K_RIGHT]:
             x = dis*1.5
-            bard_rect.move_ip((x-dis, y))
+            # bard_rect.move_ip((x-dis, y))
         if key_lst[pg.K_LEFT]:
             x = -dis
-            bard_rect.move_ip((x-dis, y))
-        # bard_rect.move_ip((x-dis, y))
+            # bard_rect.move_ip((x-dis, y))
+        bard_rect.move_ip((x-dis, y))
         screen.blit(bard_img, bard_rect)
 
         # screen.blit(bard_img, [300, 200])
